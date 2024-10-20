@@ -22,7 +22,7 @@ mount --mkdir $efi_part /mnt/boot
 
 swapon $swap_part
 
-pacstarp -K /mnt base linux linux-firmware grub Network-Manager iwd
+pacstrap -K /mnt base linux linux-firmware grub Network-Manager iwd
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
