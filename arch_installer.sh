@@ -8,7 +8,7 @@ read root_part
 
 echo "Enter the swap partition:"
 
-read swaap_part
+read swap_part
 
 mkfs.fat -F 32 $efi_part
 
@@ -22,7 +22,7 @@ mount --mkdir $efi_part /mnt/boot
 
 swapon $swap_part
 
-pacstarp -k /mnt base linux linux-firmware grub Network-Manager iwd
+pacstarp -K /mnt base linux linux-firmware grub Network-Manager iwd
 
 genfstab -U /mnt >> /mnt/etc/fstab
 
@@ -41,7 +41,7 @@ echo LANG=en_US.UTF-8 > /etc/locale.conf
 
 nano /etc/hostname
 
-mkinitcpio -p 
+mkinitcpio -P
 
 passwd
 
